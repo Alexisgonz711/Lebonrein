@@ -5,6 +5,8 @@ class Organ < ApplicationRecord
 
   validates :name, presence: true
   validates :category, presence: true
+  #inclusion: { in: %w(small medium large)}
+
   validates :description, presence: true
   validates :image_url, presence: true
   validates :availability, presence: true
