@@ -1,0 +1,27 @@
+.banner {
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+  height: auto;
+  min-height: 500px;
+}
+
+.banner h1 {
+  color: white !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.banner h2 {
+  font-size: 20px;
+  color: white !important;
+  opacity: .8;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.container{
+  display:block;
+  padding: 200px;
+
+}
