@@ -1,0 +1,19 @@
+<div class="organs-banner">
+  <h1>Tous les Organes</h1>
+</div>
+
+<div class="cards">
+  <% @organs.each do |organ| %>
+  <div class="card">
+    <img src="https://www.indexsante.ca/chroniques/images/pierres-aux-reins-calculs-renaux.jpg" alt="">
+      <%# <%= cl_image_tag("THE_IMAGE_ID_FROM_LIBRARY") %>
+    <div class="card-content">
+      <div>
+        <h2><%= organ.name %></h2>
+        <p>Catégorie: <%= organ.category %></p>
+      </div>
+      <h2><%= organ.pricing %>€</h2>
+    </div>
+  </div>
+  <% end %>
+</div>
