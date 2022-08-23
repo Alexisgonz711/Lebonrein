@@ -1,0 +1,14 @@
+<div class="tabs">
+  <div class= "tab tab-active" id="tab1">Mes commandes</div>
+  <div class="tab" id="tab2">Mes ventes</div>
+</div>
+
+<div id="tab1-content" class="tab-content tab-content-active">
+  <% @bookings.each do |booking| %>
+    <%= render "bookings/card_booking", booking: booking %>
+  <% end %>
+</div>
+
+<div id="tab2-content" class="tab-content">
+  Bla bla bla 2
+</div>
