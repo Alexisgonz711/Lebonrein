@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#dashboard"
   resources :organs do
     resources :reviews, only: %i[new create edit update destroy]
+    resources :bookings, only: %i[create update destroy]
   end
 end
