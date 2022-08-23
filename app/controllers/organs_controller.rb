@@ -1,5 +1,6 @@
 class OrgansController < ApplicationController
   def index
+    @organs = Organ.all
   end
 
   def show
