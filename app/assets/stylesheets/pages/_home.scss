@@ -1,1 +1,49 @@
 // Specific CSS for your home-page
+.show-layout{
+  background-color: #f1e9e9;
+  height: 100vh;
+
+}
+
+
+.title{
+  padding-left: 38px;
+  font-weight: bolder;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.btn-buy{
+  text-decoration: none;
+  width: 25%;
+  text-align: right;
+}
+
+.organ-content{
+  display: flex;
+}
+
+.organ-content ul{
+  list-style: none;
+
+}
+
+.organ-content img{
+  background-color: white;
+ padding: 5px 10px 0px 10px;
+ height: 25%;
+ width: 25%;
+ border-radius: 25%;
+
+}
+
+.organ-price{
+  width: 25%;
+  text-align: right;
+  font-size: 20px;
+}
+
+a{
+  width: 25%;
+  text-align: right;
+}
