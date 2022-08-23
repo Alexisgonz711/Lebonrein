@@ -3,6 +3,7 @@ class OrgansController < ApplicationController
   end
 
   def show
+    @organ = Organ.find(params[:id])
   end
 
   def new
