@@ -18,12 +18,13 @@
 
 .organ-content{
   display: flex;
-  border: 1px solid grey;
+  border: 1px solid #dccfcf;
   border-radius: 68px;
-  // padding: 33px;
-  // padding-right: 29px;
-  // margin-right: 335px;
+  border-radius: 68px;
+  background-color: #ffffff;
+  box-shadow: 5px 4px 13px 4px rgba(175, 162, 162, .7);
 }
+
 
 .organ-info {
   padding: 40px 40px 10px 40px;
