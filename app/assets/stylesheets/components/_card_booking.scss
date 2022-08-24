@@ -1,0 +1,43 @@
+.dashboard-card {
+  overflow: hidden;
+  height: 180px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-card img {
+  object-fit: cover;
+  object-position: center;
+  width: 30%;
+}
+
+.dashboard-booking-card-infos {
+  width: 30%;
+  margin: 30px;
+}
+
+.dashboard-booking-card-status {
+  width: 40%;
+  margin: 30px;
+
+}
+
+.dashboard-card h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.dashboard-card p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.dashboard-card .dashboard-card-infos {
+  padding: 16px;
+}
