@@ -18,6 +18,8 @@ puts "#{User.count} users created!"
 
 puts "Destroying organs..."
 puts "Creating organs..."
+
+jeune = Organ.create!(name: "Coeur d'un jeune", category: "Coeur", pricing: 22000,  description: "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500", image_url: "blablalblalbalblbalba", user: sherazade )
 poumon = Organ.create!(name: "Je vends mon poumon", category: "poumon", description: "neuf", user: elea, pricing: 10000)
 coeur = Organ.create!(name: "Je vends un coeur trouvé dans une poubelle", category: "poumon", description: "un peu amoché", user: alexis, pricing: 20000)
 puts "#{Organ.count} organs created!"
