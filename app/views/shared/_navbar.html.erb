@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid navbar-default">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png"%>
     <% end %>
 
@@ -13,6 +13,7 @@
           <li class="nav-element active">
             <%= link_to "Liste des organes", organs_path, class: "nav-link" %>
           </li>
+        <% if user_signed_in? %>
           <li class="nav-element">
             <%= link_to "Créer une annonce", "#", class: "nav-link" %>
           </li>
@@ -27,6 +28,11 @@
               <%= link_to "Déconnexion", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
+        <% else %>
+          <li class="nav-element">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
