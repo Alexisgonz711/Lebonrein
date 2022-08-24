@@ -11,6 +11,7 @@
 @import "components/index";
 @import "pages/index";
 
+
 .lebonrein-container {
   width: 900px;
   margin: 0 auto;
@@ -22,4 +23,15 @@ a {
 
 body {
   background-color: #ede6e6;
+
+@import "bootstrap/scss/bootstrap"; /* picks it up in node_modules! */
+
+.lebonrein-container {
+  width: 900px;
+  margin: 0 auto;
+  display: block;
+  justify-content: space-between;
+  background-color: #F2F2F2;
+  height: 500px;
+
 }
