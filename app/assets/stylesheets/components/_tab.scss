@@ -1,24 +1,14 @@
-.tabs {
-  display: flex;
-}
 
-.tab {
-  background-color: #CB807D;
-  color: white;
-  padding: 8px;
+.nav-item {
+  background-color: #E8DCB9 !important;
   border-radius: 8px 8px 0 0;
-  width: 200px;
+  // width: 200px;
   text-align: center;
 }
 
-.tab-active {
-  background-color: #E8DCB9;
+.nav-link {
+  color: white;
 }
-
-.tab-content {
-  display: none;
-}
-
-.tab-content-active {
-  display: block;
+.nav-link.active {
+  background-color: #CB807D !important;
 }
