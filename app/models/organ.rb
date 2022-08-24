@@ -9,6 +9,5 @@ class Organ < ApplicationRecord
 
   validates :description, presence: true
   validates :image_url, presence: true
-  validates :availability, presence: true
-  validates :price, presence: true
+  validates :pricing, presence: true
 end
