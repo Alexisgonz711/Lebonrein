@@ -23,6 +23,7 @@ a {
 
 body {
   background-color: #ede6e6;
+}
 
 @import "bootstrap/scss/bootstrap"; /* picks it up in node_modules! */
 
@@ -33,5 +34,4 @@ body {
   justify-content: space-between;
   background-color: #F2F2F2;
   height: 500px;
-
 }
