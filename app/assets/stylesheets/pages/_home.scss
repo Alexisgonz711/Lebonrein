@@ -1,4 +1,43 @@
 // Specific CSS for your home-page
+.text {
+  font-size: 50px;
+}
+
+.home-buttons-left{
+  color:#BC4B51;
+  text-align: center;
+}
+
+.home-buttons-left p{
+  color: #2C0703;
+  text-align: center;
+  padding: 21px;
+}
+
+.home-buttons-left h2{
+  font-size: 45px;
+}
+
+.home-buttons-right h2 {
+  font-size: 45px;
+}
+
+.home-buttons-right p {
+  color: #2C0703;
+  text-align: center;
+  padding: 21px;
+}
+
+.home-buttons-right{
+  color:#BC4B51;
+  text-align: center;
+}
+
+a.btn.btn-lg{
+  color:white;
+  font-size: 30px;
+  background-color: #BC4B51;
+  
 .show-layout{
   background-color: #f2f2f2;
   height: 100vh;
