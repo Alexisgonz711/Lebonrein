@@ -12,31 +12,15 @@
 @import "pages/index";
 @import "organs/show";
 
-
-.lebonrein-container {
-  width: 900px;
-  margin: 0 auto;
+body {
+  background-color: #EDE6E6;
 }
 
 a {
   text-decoration: none;
 }
 
-body {
-  background-color: #ede6e6;
-}
-
-@import "bootstrap/scss/bootstrap"; /* picks it up in node_modules! */
-
 .lebonrein-container {
   width: 900px;
   margin: 0 auto;
-}
-
-body{
-  background-color: #EDE6E6;
-  display: block;
-  justify-content: space-between;
-  background-color: #F2F2F2;
-  height: 500px;
 }
