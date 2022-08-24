@@ -1,0 +1,59 @@
+.show-layout{
+  background-color:#EDE6E6;
+  height: 100vh;
+}
+
+
+.show-title{
+  padding-left: 38px;
+  font-weight: bolder;
+  margin-bottom: 30px;
+}
+
+.btn-buy{
+  text-decoration: none;
+  width: 25%;
+  text-align: right;
+}
+
+.organ-content{
+  display: flex;
+  border: 1px solid #dccfcf;
+  border-radius: 68px;
+  border-radius: 68px;
+  background-color: #ffffff;
+  box-shadow: 5px 4px 13px 4px rgba(175, 162, 162, .7);
+}
+
+
+.organ-info {
+  padding: 40px 40px 10px 40px;
+}
+
+.organ-content img{
+  background-color: white;
+ padding: 5px 10px 0px 10px;
+ width: 40%;
+ border-radius: 25%;
+ margin: 10px 10px;
+}
+
+.organ-price{
+  width: 25%;
+  text-align: right;
+  font-size: 22px;
+}
+
+.button {
+  color: black;
+  font-size:22px ;
+  width: 25%;
+  text-align: right;
+  text-decoration: none;
+}
+
+.organ-info-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7em;
+}

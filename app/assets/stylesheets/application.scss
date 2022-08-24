@@ -10,6 +10,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "organs/show";
 
 
 .lebonrein-container {
@@ -30,6 +31,10 @@ body {
 .lebonrein-container {
   width: 900px;
   margin: 0 auto;
+}
+
+body{
+  background-color: #EDE6E6;
   display: block;
   justify-content: space-between;
   background-color: #F2F2F2;
