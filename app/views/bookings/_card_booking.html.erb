@@ -7,7 +7,7 @@
   </div>
   <div class="dashboard-booking-card-status">
     <p>
-      <% if booking.availability == "pending" %>
+      <% if booking.pending? %>
         <%= "En attente de validation" %>
       <% elsif booking.availability == "sold" %>
         <%= "Acheté" %>
@@ -17,8 +17,72 @@
     </p>
     <p><%= booking.organ.pricing %>€</p>
     <p>Vendu par : <%= booking.organ.user.username %></p>
-    <%# <% if booking.availability == "sold" => Il manque un % fleche %>
-      <%= link_to "Rédiger un avis", "#", class: "red-button" %>
-    <%# <% end %>
+
+    <!-- Button trigger modal -->
+
+    <% if booking.sold? && !booking.organ.review %>
+
+    <button type="button" class="red-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Rédiger un avis
+    </button>
+
+    <% else %>
+
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Voir mon avis
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <p><%= booking.organ.review.comment %></p>
+        <p><%= booking.organ.review.rating %></p>
+    </div>
+    </div>
+
+
+    <% end %>
+
+<!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Rédiger un avis</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+
+
+
+
+          <div class="modal-body">
+
+            <%= simple_form_for([booking.organ, @review]) do |f| %>
+              <%= f.error_notification %>
+              <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+              <div class="form-inputs">
+                <%= f.input :comment %>
+                <%= f.input :rating %>
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit %>
+              </div>
+            <% end %>
+          </div>
+
+
+
+
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            <button type="button" class="btn btn-primary">Sauvegarder</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"``
   get "/dashboard", to: "users#dashboard"
   resources :organs do
-    resources :reviews, only: %i[new create edit update destroy]
+    resources :reviews, only: %i[create edit update destroy]
     resources :bookings, only: %i[create update destroy]
   end
 end
