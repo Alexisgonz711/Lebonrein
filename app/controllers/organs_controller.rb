@@ -1,6 +1,11 @@
 class OrgansController < ApplicationController
   def index
-    @organs = Organ.all
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR category ILIKE :query"
+      @organs = Organ.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @organs = Organ.all
+    end
   end
 
   def show
