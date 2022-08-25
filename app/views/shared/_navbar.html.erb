@@ -15,7 +15,7 @@
           </li>
         <% if user_signed_in? %>
           <li class="nav-element">
-            <%= link_to "Créer une annonce", "#", class: "nav-link" %>
+            <%= link_to "Créer une annonce", new_organ_path, class: "nav-link" %>
           </li>
           <li class="nav-element">
             <%= link_to "Tableau de bord", dashboard_path, class: "nav-link" %>
