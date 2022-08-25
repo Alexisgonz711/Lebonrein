@@ -4,23 +4,6 @@
 
 <div class="cards">
   <% @organs.each do |organ| %>
-  <div class="card-btn-container">
-    <div class="card">
-      <img src="https://www.3dnatives.com/wp-content/uploads/heart_cover-1.jpg" alt="">
-        <%# <%= cl_image_tag("THE_IMAGE_ID_FROM_LIBRARY") %>
-      <div class="card-content">
-        <h2><%= organ.name.capitalize %></h2>
-        <div class="card-info-price">
-          <div class="card-info">
-            <p>Catégorie : <%= organ.category.capitalize %></p>
-            <p>Vendu par : <%= organ.user.username%></p>
-            <p>note vendeur</p>
-          </div>
-          <h2><%= organ.pricing %>€</h2>
-        </div>
-      </div>
-    </div>
-      <%= link_to "En savoir plus", organ_path(organ), :class => "red-button" %>
-  </div>
+    <%= render "displayed_organs", organ: organ %>
   <% end %>
 </div>
