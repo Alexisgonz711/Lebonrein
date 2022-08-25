@@ -1,6 +1,5 @@
 .dashboard-card {
-  overflow: hidden;
-  height: 180px;
+  height: 180px !important;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -11,17 +10,23 @@
   object-fit: cover;
   object-position: center;
   width: 30%;
+  height: 100%;
 }
 
 .dashboard-booking-card-infos {
-  width: 30%;
-  margin: 30px;
+  width: 50%;
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  line-height: 10px;
 }
 
 .dashboard-booking-card-status {
-  width: 40%;
-  margin: 30px;
-
+  width: 20%;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
 }
 
 .dashboard-card h4 {
@@ -31,8 +36,8 @@
 }
 
 .dashboard-card p {
-  font-size: 12px;
-  line-height: 1.4;
+  font-size: 14px;
+  line-height: 1.8;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
@@ -40,4 +45,8 @@
 
 .dashboard-card .dashboard-card-infos {
   padding: 16px;
+}
+
+.nav-tabs {
+  border: 0;
 }
