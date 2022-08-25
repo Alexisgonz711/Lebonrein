@@ -10,15 +10,16 @@
 
     <div class="organ-info-bottom">
       <h2><%= @organ.pricing %>€</h2>
-      <div class="btn-buy">
-      <%= link_to "Reserver", organ_booking_path(@organ), data: { turbo_method: :patch } %>
-        <a class="button" href="#">Réserver </a>
-      </div>
     </div>
      <% if @organ.user == current_user %>
-  <%= link_to "Modifier", edit_organ_path %>
-  <%= link_to "Supprimer", organ_path(@organ), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  <% end %>
+      <%= link_to "Modifier", edit_organ_path, class: "btn btn-lg" %>
+      <%= link_to "Supprimer", organ_path(@organ), class: "btn btn-lg" , data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+       <% else %>
+       <div class="btn-buy">
+        <%= link_to "Reserver", organ_booking_path(@organ), class: "btn btn-lg" , data: { turbo_method: :patch } %>
+      </div>
+
+      <% end %>
     </div>
   </div>
 </div>

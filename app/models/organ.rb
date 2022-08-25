@@ -1,7 +1,7 @@
 class Organ < ApplicationRecord
   belongs_to :user
   has_one :review
-  has_one :booking
+  has_one :booking, dependent: :destroy
 
 validates :name, presence: true, length: { maximum: 55 }
 
