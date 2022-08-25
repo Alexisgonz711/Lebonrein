@@ -12,6 +12,7 @@
       <h2><%= @organ.pricing %>€</h2>
       <div class="btn-buy">
       <%= link_to "Reserver", organ_booking_path(@organ), data: { turbo_method: :patch } %>
+        <a class="button" href="#">Réserver </a>
       </div>
     </div>
 
