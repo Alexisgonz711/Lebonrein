@@ -14,7 +14,10 @@
         <a class="button" href="#">Réserver </a>
       </div>
     </div>
-
+     <% if @organ.user == current_user %>
+  <%= link_to "Modifier", edit_organ_path %>
+  <%= link_to "Supprimer", organ_path(@organ), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <% end %>
     </div>
   </div>
 </div>
