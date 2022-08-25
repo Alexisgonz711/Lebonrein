@@ -2,6 +2,7 @@ class Organ < ApplicationRecord
   belongs_to :user
   has_one :review
   has_one :booking, dependent: :destroy
+  has_one_attached :image_url
 
 validates :name, presence: true, length: { maximum: 55 }
 

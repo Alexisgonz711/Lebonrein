@@ -37,6 +37,6 @@ class OrgansController < ApplicationController
   private
 
   def organ_params
-    params.require(:organ).permit(:name, :category, :description, :pricing)
+    params.require(:organ).permit(:name, :category, :description, :pricing, :image_url)
   end
 end
