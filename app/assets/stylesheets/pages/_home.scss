@@ -4,13 +4,15 @@
 }
 
 .home-buttons-left{
+  display: inline-block;
   color:#BC4B51;
   text-align: center;
+  margin: 50px;
 }
 
 .home-buttons-left p{
   color: #2C0703;
-  text-align: center;
+  text-align: inherit;
   padding: 21px;
 }
 
@@ -24,13 +26,14 @@
 
 .home-buttons-right p {
   color: #2C0703;
-  text-align: center;
+  text-align: inherit;
   padding: 21px;
 }
 
 .home-buttons-right{
   color:#BC4B51;
   text-align: center;
+  margin: 50px;
 }
 
 a.btn.btn-lg{
@@ -38,4 +41,3 @@ a.btn.btn-lg{
   font-size: 30px;
   background-color: #BC4B51;
 }
-
