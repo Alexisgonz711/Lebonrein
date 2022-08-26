@@ -1,12 +1,14 @@
 <div class="dashboard-card">
   <img src="https://media.istockphoto.com/photos/human-heart-picture-id1320314279?k=20&m=1320314279&s=612x612&w=0&h=1zBoPZM6Ww3osHlB8gP_4n_oiD4e1BZhd6JOiyh1wcU=" alt="">
   <div class="dashboard-booking-card-infos">
-    <h4><%= booking.organ.name %></h4>
+    <h4>Annonce : <%= booking.organ.name %></h4>
     <p> Catégorie : <%= booking.organ.category %></p>
     <p> Détails : <%= booking.organ.description %></p>
+    <p>Prix : <%= booking.organ.pricing %>€</p>
   </div>
+
   <div class="dashboard-booking-card-status">
-    <p>
+    <p> Statut :
       <% if booking.pending? %>
         <%= "En attente de validation" %>
       <% elsif booking.availability == "sold" %>
@@ -15,30 +17,27 @@
         <%= "" %>
       <% end %>
     </p>
-    <p><%= booking.organ.pricing %>€</p>
     <p>Vendu par : <%= booking.organ.user.username %></p>
 
     <!-- Button trigger modal -->
 
     <% if booking.sold? && !booking.organ.review %>
 
-    <button type="button" class="red-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button-orders" class="red-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Rédiger un avis
     </button>
 
     <% elsif booking.organ.review %>
 
     <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-      Voir mon avis
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <p><%= booking.organ.review.comment %></p>
-        <p><%= booking.organ.review.rating %></p>
+      <button class="red-button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Voir mon avis
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <p><%= booking.organ.review.comment %></p>
+          <p><%= booking.organ.review.rating %></p>
+      </div>
     </div>
-    </div>
-
-
     <% end %>
 
 <!-- Modal -->
