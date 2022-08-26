@@ -54,3 +54,14 @@
 .button-orders {
 
 }
+
+.button-buyer {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.button-buyer a{
+  text-decoration: none !important;
+  color: white !important;
+}
