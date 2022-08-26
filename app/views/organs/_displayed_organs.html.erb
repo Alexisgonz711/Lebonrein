@@ -3,8 +3,11 @@
 <% else %>
   <div class="card-btn-container">
     <div class="card">
-      <img src="https://www.3dnatives.com/wp-content/uploads/heart_cover-1.jpg" alt="">
-        <%# <%= cl_image_tag("THE_IMAGE_ID_FROM_LIBRARY") %>
+      <% if organ.image_url.key.present? %>
+        <%= cl_image_tag organ.image_url.key, crop: :fill %>
+      <% else %>
+        <img src="https://www.3dnatives.com/wp-content/uploads/heart_cover-1.jpg" alt="">
+      <% end %>
       <div class="card-content">
         <h2><%= organ.name.capitalize %></h2>
         <div class="card-info-price">
