@@ -8,6 +8,24 @@
     <h4><%= booking.organ.name %></h4>
     <p> Catégorie : <%= booking.organ.category %></p>
     <p> Détails : <%= booking.organ.description %></p>
+
+<div class="button-buyer">
+  <div class="btn-buyer-left red-button">
+    <% if booking.availability == "pending" %>
+      <%= link_to "Accepter", booking_path(booking, action_btn: "accept"), method: :put %>
+    <% else %>
+      <p>Vente acceptée !</p>
+    <% end %>
+  </div>
+  <div class="btn-buyer-right red-button">
+    <% if booking.availability == "pending" %>
+      <%= link_to "Refuser", booking_path(booking), method: :delete %>
+    <% else %>
+      <%= link_to "Annuler", booking_path(booking), method: :delete %>
+    <% end %>
+  </div>
+</div>
+
     <p>Prix : <%= booking.organ.pricing %>€</p>
   </div>
 
