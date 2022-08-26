@@ -1,14 +1,24 @@
 
-.nav-item {
-  background-color: #E8DCB9 !important;
-  border-radius: 8px 8px 0 0;
-  // width: 200px;
-  text-align: center;
+.tabs {
+  display: flex;
 }
 
-.nav-link {
-  color: white;
-}
-.nav-link.active {
+.tab {
   background-color: #CB807D !important;
+  border-radius: 8px 8px 0 0 !important;
+  text-align: center;
+  color: white;
+  width: 250px;
+  height: 40px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.tab-active {
+  background-color: #BC4B51 !important;
+  // border-radius: 8px 8px 0 0 !important;
+}
+
+.lebonrein-container {
+  padding-top: 60px;
 }

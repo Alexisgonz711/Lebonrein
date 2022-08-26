@@ -1,12 +1,18 @@
 <div class="dashboard-card">
+  <div class="emoji-delete-edit">
+    <%= link_to "🖊", edit_organ_path(booking.organ) %>
+    <%= link_to "🗑", organ_path(booking.organ), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </div>
   <img src="https://media.istockphoto.com/photos/human-heart-picture-id1320314279?k=20&m=1320314279&s=612x612&w=0&h=1zBoPZM6Ww3osHlB8gP_4n_oiD4e1BZhd6JOiyh1wcU=" alt="">
   <div class="dashboard-booking-card-infos">
     <h4><%= booking.organ.name %></h4>
     <p> Catégorie : <%= booking.organ.category %></p>
     <p> Détails : <%= booking.organ.description %></p>
+    <p>Prix : <%= booking.organ.pricing %>€</p>
   </div>
+
   <div class="dashboard-booking-card-status">
-    <p>
+    <p>Statut :
       <% if booking.availability == "pending" %>
         <%= "En attente de validation" %>
       <% elsif booking.availability == "sold" %>
@@ -15,11 +21,12 @@
         <%= "" %>
       <% end %>
     </p>
-    <p><%= booking.organ.pricing %>€</p>
     <p>Acheté par : <%= booking.user.username %></p>
-    <%# <% if booking.availability == "free" => Il manque un % fleche %>
-      <%= link_to "🖊", edit_organ_path(booking.organ) %>
-      <%= link_to "🗑", organ_path(booking.organ), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-    <%# <% end %>
+    <div class="button-buyer">
+      <% if booking.availability == "pending" %>
+          <%= button_to "Accepter", booking_path(booking, action_btn: "accept"), class:"orders-button", id:"accept-refuse", method: :put %>
+          <%= button_to "Refuser", booking_path(booking), class:"orders-button", id:"accept-refuse", method: :delete %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -9,6 +9,7 @@
 require 'faker'
 require 'open-uri'
 
+Review.destroy_all
 Booking.destroy_all
 Organ.destroy_all
 User.destroy_all
@@ -44,7 +45,29 @@ puts "Creating organs..."
 
 jeune = Organ.create!(name: "Coeur d'un jeune", category: "Coeur", pricing: 22000,  description: "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500", user: sherazade )
 
+
 categories = ["poumon", "coeur", "rein", "foie", "rate", "estomac", "intestin", "penis", "clitoris", "vessie", "pancréas", "appendice", "vésicule billiaire"]
+
+poumon = Organ.create!(name: "Je vends mon poumon", category: "poumon", description: "neuf", user: elea, pricing: 10000)
+coeur = Organ.create!(name: "Je vends un coeur trouvé dans une poubelle", category: "coeur", description: "un peu amoché", user: alexis, pricing: 20000)
+
+
+
+new_sherazade_organs = []
+
+5.times do
+  new_sherazade_organs << categories.sample
+end
+
+id_sherazade = 0
+
+5.times do
+  organ = Organ.new(name: "À vendre, #{new_sherazade_organs[id_sherazade]} !", category: new_sherazade_organs[id_sherazade], description: Faker::Games::LeagueOfLegends.quote, user: sherazade, pricing: (10000..100000).to_a.sample)
+  organ.save!
+  Review.create(comment: Faker::TvShows::GameOfThrones.quote, rating: rand(0..5), organ: organ)
+  id_sherazade += 1
+end
+
 new_organs = []
 
 file = URI.open("https://st3.depositphotos.com/6563466/32179/i/450/depositphotos_321794782-stock-photo-human-body-organs-lungs-anatomy.jpg")
@@ -137,3 +160,14 @@ Booking.create!(user: sherazade, organ: poumon, availability: 1)
 end
 
 puts "#{Booking.count} bookings created!"
+
+# For Reviews Creation
+
+puts "Destroying reviews..."
+puts "Creating reviews..."
+
+15.times do
+  Review.create!(comment: Faker::TvShows::GameOfThrones.quote, rating: rand(0..5), organ: fake_organs.sample)
+end
+
+puts "#{Review.count} reviews created!"
