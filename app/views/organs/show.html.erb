@@ -3,7 +3,9 @@
 
 
   <div class= "organ-content">
+  <% if @organ.image_url.key.present? %>
     <%= cl_image_tag @organ.image_url.key, crop: :fill %>
+    <% end %>
     <div class="organ-info">
      <p><%= @organ.category %></p>
      <p><%= @organ.description %></p>
