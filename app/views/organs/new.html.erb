@@ -1,18 +1,20 @@
-<h1>Création d'une annonce</h1>
+<div class="lebonrein-container">
+  <h1>Création d'une annonce</h1>
 
-<%= simple_form_for(@organ) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= simple_form_for(@organ) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :category %>
-    <%= f.input :description %>
-    <%= f.input :pricing %>
-    <%= f.input :image_url, as: :file %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :name, label: "Nom", required: false %>
+      <%= f.input :category, label: "Catégorie", required: false %>
+      <%= f.input :description, required: false %>
+      <%= f.input :pricing, label: "Prix", required: false %>
+      <%= f.input :image_url, as: :file, label:"Photo", required: false %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Enregistrer", class: "btn-lg"  %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "Enregistrer", class: "btn-lg"  %>
+    </div>
+  <% end %>
+</div>

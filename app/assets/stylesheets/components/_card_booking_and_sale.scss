@@ -15,7 +15,7 @@
 }
 
 .dashboard-booking-card-infos {
-  width: 50%;
+  width: 40%;
   margin: 30px;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
 }
 
 .dashboard-booking-card-status {
-  width: 20%;
+  width: 30%;
   margin-right: 30px;
 }
 
@@ -94,4 +94,13 @@ p {
 .button-buyer a{
   text-decoration: none !important;
   color: white !important;
+}
+
+#accept-refuse {
+  height: 38px;
+  width: 110px;
+}
+
+#booking-card-status-right {
+  padding-left: 2em;
 }
