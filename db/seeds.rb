@@ -8,6 +8,7 @@
 
 require 'faker'
 
+Review.destroy_all
 Booking.destroy_all
 Organ.destroy_all
 User.destroy_all
@@ -46,6 +47,22 @@ poumon = Organ.create!(name: "Je vends mon poumon", category: "poumon", descript
 coeur = Organ.create!(name: "Je vends un coeur trouvé dans une poubelle", category: "coeur", description: "un peu amoché", user: alexis, pricing: 20000)
 
 categories = ["poumon", "coeur", "rein", "foie", "rate", "estomac", "intestin", "penis", "clitoris", "vessie", "pancréas", "apendice", "vésicule billiaire"]
+
+new_sherazade_organs = []
+
+5.times do
+  new_sherazade_organs << categories.sample
+end
+
+id_sherazade = 0
+
+5.times do
+  organ = Organ.new(name: "À vendre, #{new_sherazade_organs[id_sherazade]} !", category: new_sherazade_organs[id_sherazade], description: Faker::Games::LeagueOfLegends.quote, user: sherazade, pricing: (10000..100000).to_a.sample)
+  organ.save!
+  Review.create(comment: Faker::TvShows::GameOfThrones.quote, rating: rand(0..5), organ: organ)
+  id_sherazade += 1
+end
+
 new_organs = []
 
 57.times do
@@ -74,8 +91,13 @@ end
 
 puts "#{Booking.count} bookings created!"
 
-5.times do
-  organ = Organ.new(name: "Coeur à vendre !", category: "Coeur", description: Faker::Games::LeagueOfLegends.quote, user: sherazade, pricing: (10000..100000).to_a.sample)
-  organ.save!
-  Review.create(comment: "lorem ipsum", rating: rand(0..5), organ: organ)
+# For Reviews Creation
+
+puts "Destroying reviews..."
+puts "Creating reviews..."
+
+15.times do
+  Review.create!(comment: Faker::TvShows::GameOfThrones.quote, rating: rand(0..5), organ: fake_organs.sample)
 end
+
+puts "#{Review.count} reviews created!"
