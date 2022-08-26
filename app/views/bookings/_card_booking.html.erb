@@ -8,29 +8,31 @@
   </div>
 
   <div class="dashboard-booking-card-status">
-    <p> Statut :
-      <% if booking.pending? %>
-        <%= "En attente de validation" %>
-      <% elsif booking.availability == "sold" %>
-        <%= "Acheté" %>
-      <% else %>
-        <%= "" %>
-      <% end %>
-    </p>
-    <p>Vendu par : <%= booking.organ.user.username %></p>
+    <div class="status-right align-self-start">
+      <p> Statut :
+        <% if booking.pending? %>
+          <%= "En attente de validation" %>
+        <% elsif booking.availability == "sold" %>
+          <%= "Acheté" %>
+        <% else %>
+          <%= "" %>
+        <% end %>
+      </p>
+      <p>Vendu par : <%= booking.organ.user.username %></p>
+    </div>
 
     <!-- Button trigger modal -->
 
     <% if booking.sold? && !booking.organ.review %>
 
-    <button type="button-orders" class="red-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="orders-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Rédiger un avis
     </button>
 
     <% elsif booking.organ.review %>
 
     <div class="dropdown">
-      <button class="red-button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      <button class="orders-button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         Voir mon avis
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -64,10 +66,6 @@
                 <%= f.input :rating %>
               </div>
 
-              <div class="form-actions">
-                <%= f.button :submit %>
-              </div>
-            <% end %>
           </div>
 
 
@@ -77,7 +75,10 @@
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-            <button type="button" class="btn btn-primary">Sauvegarder</button>
+              <div class="form-actions" id="save-review">
+                <%= f.button :submit, "Sauvegarder" %>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
