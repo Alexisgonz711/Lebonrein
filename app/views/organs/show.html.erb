@@ -7,8 +7,17 @@
     <%= cl_image_tag @organ.image_url.key, crop: :fill %>
     <% end %>
     <div class="organ-info">
-     <p><%= @organ.category %></p>
-     <p><%= @organ.description %></p>
+      <p><%= @organ.category %></p>
+      <p><%= @organ.description %></p>
+      <p>
+        <% if @organ.user != current_user && @organ.user.average_rating %>
+          <%= "Vendu par : #{@organ.user.username}" %>
+          <%= "(#{@organ.user.average_rating} ⭐️)" %>
+        <% elsif @organ.user == current_user %>
+        <% else %>
+          <%= "Vendu par : #{@organ.user.username}" %>
+        <% end %>
+      </p>
 
     <div class="organ-info-bottom">
       <h2><%= @organ.pricing %>€</h2>

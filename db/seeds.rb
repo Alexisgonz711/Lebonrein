@@ -41,7 +41,7 @@ puts "#{User.count} users created!"
 puts "Destroying organs..."
 puts "Creating organs..."
 
-jeune = Organ.create!(name: "Coeur d'un jeune", category: "Coeur", pricing: 22000,  description: "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500", image_url: "blablalblalbalblbalba", user: sherazade )
+jeune = Organ.create!(name: "Coeur d'un jeune", category: "Coeur", pricing: 22000,  description: "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500", user: sherazade )
 poumon = Organ.create!(name: "Je vends mon poumon", category: "poumon", description: "neuf", user: elea, pricing: 10000)
 coeur = Organ.create!(name: "Je vends un coeur trouvé dans une poubelle", category: "coeur", description: "un peu amoché", user: alexis, pricing: 20000)
 
@@ -73,3 +73,9 @@ Booking.create!(user: sherazade, organ: poumon, availability: 1)
 end
 
 puts "#{Booking.count} bookings created!"
+
+5.times do
+  organ = Organ.new(name: "Coeur à vendre !", category: "Coeur", description: Faker::Games::LeagueOfLegends.quote, user: sherazade, pricing: (10000..100000).to_a.sample)
+  organ.save!
+  Review.create(comment: "lorem ipsum", rating: rand(0..5), organ: organ)
+end
