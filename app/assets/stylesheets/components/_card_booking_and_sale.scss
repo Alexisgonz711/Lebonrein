@@ -1,9 +1,10 @@
 .dashboard-card {
-  height: 180px !important;
+  height: 250px !important;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .dashboard-card img {
@@ -15,7 +16,7 @@
 
 .dashboard-booking-card-infos {
   width: 50%;
-  margin: 50px;
+  margin: 30px;
   display: flex;
   flex-direction: column;
   line-height: 10px;
@@ -23,24 +24,19 @@
 
 .dashboard-booking-card-status {
   width: 20%;
-  margin-right: 50px;
-  display: flex;
-  flex-direction: column;
-  text-align: right;
+  margin-right: 30px;
 }
 
 .dashboard-card h4 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin-bottom: 2em;
 }
 
 .dashboard-card p {
   font-size: 14px;
-  line-height: 1.8;
   opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+  padding-bottom: 4px;
 }
 
 .dashboard-card .dashboard-card-infos {
@@ -51,6 +47,40 @@
   border: 0;
 }
 
-.button-orders {
+.orders-button {
+  background-color: #BC4B51;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 60px;
+  transition: 0.5s;
+  border: none;
+  margin-top: 10px;
+  height:40px;
+  width:120px;
+}
 
+.status-right {
+  margin-left: 5px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.emoji-delete-edit {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  font-size: 24px;
+  a {
+    padding-right: 10px;
+  }
+}
+
+#save-review > input {
+  font-size: 16px;
 }
