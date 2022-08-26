@@ -73,3 +73,9 @@ Booking.create!(user: sherazade, organ: poumon, availability: 1)
 end
 
 puts "#{Booking.count} bookings created!"
+
+5.times do
+  organ = Organ.new(name: "Coeur à vendre !", category: "Coeur", description: Faker::Games::LeagueOfLegends.quote, user: sherazade, pricing: (10000..100000).to_a.sample)
+  organ.save!
+  Review.create(comment: "lorem ipsum", rating: rand(0..5), organ: organ)
+end

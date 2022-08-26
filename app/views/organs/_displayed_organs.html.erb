@@ -10,8 +10,13 @@
         <div class="card-info-price">
           <div class="card-info">
             <p>Catégorie : <%= organ.category.capitalize %></p>
-            <p>Vendu par : <%= organ.user.username%></p>
-            <p>note vendeur</p>
+            <p>
+              Vendu par : <%= organ.user.username%>
+              <% if organ.user.average_rating %>
+                <%= "(#{organ.user.average_rating} ⭐️)" %>
+              <% end %>
+            </p>
+            </p>
           </div>
           <h2><%= organ.pricing %>€</h2>
         </div>
