@@ -16,7 +16,9 @@
      <% if @organ.user == current_user %>
       <%= link_to "Modifier", edit_organ_path, class: "btn btn-lg" %>
       <%= link_to "Supprimer", organ_path(@organ), class: "btn btn-lg" , data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-       <% else %>
+     <% elsif current_user.nil? %>
+      <p>Connectez-vous pour pouvoir réserver cet organe</p>
+     <% else %>
        <div class="btn-buy">
         <%= link_to "Reserver", organ_booking_path(@organ), class: "btn btn-lg" , data: { turbo_method: :patch } %>
       </div>
