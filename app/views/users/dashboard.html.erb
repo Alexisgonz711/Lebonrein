@@ -1,23 +1,23 @@
 <div class="lebonrein-container">
   <div class="tabs">
-    <div class="tab tab-active" id="tab-orders">
-      Mes commandes
-    </div>
-    <div class="tab" id="tab-sales">
+    <div class="tab tab-active" id="tab-sales">
       Mes ventes
+    </div>
+    <div class="tab" id="tab-orders">
+      Mes commandes
     </div>
   </div>
 
 
   <div class="tab-content" id="myTabContent">
 
-    <div class="tab-pane fade show active" id="tab-content-orders" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade show" id="tab-content-orders" role="tabpanel" aria-labelledby="home-tab">
       <% @bookings.each do |booking| %>
         <%= render "bookings/card_booking", booking: booking %>
       <% end %>
     </div>
 
-    <div class="tab-pane fade show" id="tab-content-sales" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade show active" id="tab-content-sales" role="tabpanel" aria-labelledby="profile-tab">
       <% @bookings.each do |booking| %>
         <%= render "bookings/card_sale", booking: booking %>
       <% end %>
