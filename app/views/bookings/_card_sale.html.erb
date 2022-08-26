@@ -18,8 +18,8 @@
     <p><%= booking.organ.pricing %>€</p>
     <p>Acheté par : <%= booking.user.username %></p>
     <%# <% if booking.availability == "free" => Il manque un % fleche %>
-      <%= link_to "🖊", "#" %>
-      <%= link_to "🗑", "#" %>
+      <%= link_to "🖊", edit_organ_path(booking.organ) %>
+      <%= link_to "🗑", organ_path(booking.organ), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     <%# <% end %>
   </div>
 </div>
